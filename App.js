@@ -1,11 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import CalculatorKey from './components/CalculatorKey';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.subContainer}>
+        {CalculatorKey('1')}
+        {CalculatorKey('2')}
+        {CalculatorKey('3')}
+      </View>
+
+      <View style={styles.subContainer}>
+        {CalculatorKey('4')}
+        {CalculatorKey('5')}
+        {CalculatorKey('6')}
+      </View>
+
+      <View style={styles.subContainer}>
+        {CalculatorKey('7')}
+        {CalculatorKey('8')}
+        {CalculatorKey('9')}
+      </View>
     </View>
   );
 }
@@ -13,8 +28,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  subContainer: {
+    flexDirection: 'row',
     justifyContent: 'center',
   },
 });
